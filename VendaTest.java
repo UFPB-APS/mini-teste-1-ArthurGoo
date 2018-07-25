@@ -59,7 +59,7 @@ public class VendaTest
         itemVend2.setProduto(produto2);
         itemVend2.setQuantidade(1);
         venda1.addNoCarrinho(itemVend2, 1);
-
+        double lucro = logica.lucroVenda(venda1);
         assertEquals(2625, logica.calcularTotal(venda1), 0.1);
     }
 
@@ -79,6 +79,7 @@ public class VendaTest
 
         Seguro seguro2 = new Seguro("Mapfre", 0.015);
         logica.setSeguro(seguro2);
+       
         assertEquals(10.66, logica.calcularTotal(venda1), 0.1);
     }
 

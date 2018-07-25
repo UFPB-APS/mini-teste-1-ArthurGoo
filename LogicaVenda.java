@@ -30,4 +30,13 @@ public class LogicaVenda {
         
         return venda.getTotal();
     }
+    public double lucroVenda (Venda venda){
+        double lucro = 0.0;
+        for (ItemVenda item: venda.getItens()){
+            if(item != null){
+                lucro += item.getPrecoVenda()-item.getProduto().getPrecoReferencia();
+            }    
+        }
+        return lucro;
+    }
 }
